@@ -35,3 +35,22 @@ resource "aws_s3_bucket_lifecycle_configuration" "bucket-config" {
     }
   }
 }
+
+resource "aws_iam_role" "ecs_task_execution_role" {
+  name               = "ecs-${var.repo_name}-${var.environment}"
+  assume_role_policy = <<EOF
+{
+ "Version": "2012-10-17",
+ "Statement": [
+   {
+     "Action": "sts:AssumeRole",
+     "Principal": {
+       "Service": "ecs-tasks.amazonaws.com"
+     },
+     "Effect": "Allow",
+     "Sid": ""
+   }
+ ]
+}
+EOF
+}
