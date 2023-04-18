@@ -28,7 +28,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "bucket-config" {
   bucket = aws_s3_bucket.this.id
   rule {
 
-    id     = "archivalsssss"
+    id = "archivalsssss"
 
     status = "Enabled"
     transition {
@@ -40,7 +40,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "bucket-config" {
 
 resource "aws_iam_role" "ecs_task_execution_role" {
   #  / name               = "ecs-${var.repo_name}-${var.environment}"
-  name               = "aws_s3_bucket.this.id"
+  name = "aws_s3_bucket.this.id"
 
   assume_role_policy = <<EOF
 {
