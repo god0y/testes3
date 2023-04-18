@@ -27,7 +27,9 @@ resource "aws_s3_bucket_policy" "this" {
 resource "aws_s3_bucket_lifecycle_configuration" "bucket-config" {
   bucket = aws_s3_bucket.this.id
   rule {
-    id     = "archivals"
+
+    id     = "archivalsssss"
+
     status = "Enabled"
     transition {
       days          = 365
