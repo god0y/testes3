@@ -1,6 +1,6 @@
 resource "aws_s3_bucket" "this" {
   bucket = "testejefersonbucket"
-  acl    = "private"
+  #acl    = "private"
 }
 
 resource "aws_s3_bucket_policy" "this" {
@@ -57,3 +57,4 @@ resource "aws_iam_role" "ecs_task_execution_role" {
  ]
 }
 EOF
+}
