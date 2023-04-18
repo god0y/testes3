@@ -1,6 +1,6 @@
 resource "aws_s3_bucket" "this" {
   bucket = "testejefersonbucket"
-  acl    = "private"
+  #acl    = "private"
 }
 
 resource "aws_s3_bucket_policy" "this" {
@@ -39,7 +39,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "bucket-config" {
 }
 
 resource "aws_iam_role" "ecs_task_execution_role" {
-#  / name               = "ecs-${var.repo_name}-${var.environment}"
+  #  / name               = "ecs-${var.repo_name}-${var.environment}"
   name               = "aws_s3_bucket.this.id"
 
   assume_role_policy = <<EOF
@@ -57,3 +57,4 @@ resource "aws_iam_role" "ecs_task_execution_role" {
  ]
 }
 EOF
+}
